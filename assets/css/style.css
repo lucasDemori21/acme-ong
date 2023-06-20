@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #A2D6F3;
+    background-color: #A2D6F3;
 }
 
 .navbar{
@@ -31,4 +31,31 @@ height: auto;
     height: auto;
 }
 
+
+.apr-texto{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    background-color: #A2D6F3;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.texto{
+    width: 50%;
+    height: auto;
+}
+
+.texto p{
+    margin: 5% 0 5% 20%;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.texto span{
+    font-size: 18px;
+    font-weight: 600;
+}
 
