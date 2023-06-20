@@ -4,11 +4,6 @@
     box-sizing: border-box;
     height: 100%;
 }
-
-body{
-    background-color: #A2D6F3;
-}
-
 .navbar{
     height: auto;
     background-color: #A2D6F3; 
@@ -58,4 +53,5 @@ height: auto;
     font-size: 18px;
     font-weight: 600;
 }
+
 
