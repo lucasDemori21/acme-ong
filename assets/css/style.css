@@ -104,3 +104,43 @@ height: auto;
     color: rgba(0, 0, 0, 0.7);
 
 }
+
+.card {
+    border: none;
+    border-radius: 0;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  }
+  .carousel-inner2 {
+    padding: 1em;
+  }
+
+  section{
+    height: 70%;
+  }
+
+  @media screen and (min-width: 577px) {
+    .cards-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      margin: 0 0.5em;
+      width: calc(100% / 2);
+    }
+    .image-wrapper {
+      
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .card:not(:first-child) {
+      display: none;
+    }
+  }
+  
+  .image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
