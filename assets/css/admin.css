@@ -103,8 +103,92 @@ body {
 
 .container-tabs{
     width: 80%;
+    margin-left: 10%;
 }
 
-.nav-tabs{
+.layout-image{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% 0 2% 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container-image{
+    width: 49%;
+    height: 450px;
+    background-color: rgba(36, 36, 36, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 0;
+    border-radius: 10px;
+}
+
+@media(max-width: 768px){
+    .layout-image{
+        flex-direction: column;
+    }
+    .container-image{
+        width: 100%;
+        margin: 1% auto;
+    }
+    .layout-image .container-workspace{
+        width: 100%;
+        margin: 1% auto;
+    }
+}
+
+.container-workspace{
+    width: 49%;
+    padding: 2% 0;
+    height: auto;
+    background-color: rgba(36, 36, 36, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 0;
+    border-radius: 10px;
+}
+
+.solicitacao{
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+}
+
+.solicitacao textarea{
+    width: 80%;
+    height: 6rem;
+    padding: 2%;
+    
+    border-radius: 10px;
+    background-color: rgb(189, 189, 189);
+    
+}
+.comp-solicitacao{
     margin-left: 10%;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.comp{
+    width: 49%;
+}
+
+.comp-name{
+    display: flex;
+    width: 49%;
+    white-space: nowrap;
+    flex-direction: column;
+    margin-left: 3%;
+}
+
+.comp-image{
+    width: 50px;
+    height: 50px;
+    background-color: #A2D6F3;
+    border-radius: 100%;
 }
