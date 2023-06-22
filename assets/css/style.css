@@ -3,7 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     height: 100%;
+    overflow-x: hidden;
 }
+body{
+    background-color: #A2D6F3;
+}
+
 .navbar{
     height: auto;
     background-color: #A2D6F3; 
@@ -86,6 +91,11 @@ height: auto;
     float: left;
     padding-top: 2%;
 }
+
+.carousel-item{
+    background-color: #A2D6F3;
+}
+
 .texto-servicos span{
     margin-left: 5%;
     font-size: 18px;
@@ -115,7 +125,7 @@ height: auto;
   }
 
   section{
-    height: 70%;
+    height: 60%;
   }
 
   @media screen and (min-width: 577px) {
@@ -144,3 +154,23 @@ height: auto;
     max-height: 100%;
   }
   
+.mb-4 .redes{
+    border-radius: 50px;
+    width: 33px;
+    height: 33px;
+    overflow: hidden;
+    margin: 0 1%;
+}
+
+.mb-4 .redes i{
+    margin: 2px 0 0 -3.3px;
+}
+
+.footer-color{
+    height: auto; 
+    background-color: #A2D6F3;
+}
+
+.collapse .navbar-nav{
+    text-align: center;
+}
