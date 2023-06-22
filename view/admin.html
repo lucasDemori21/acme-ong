@@ -9,6 +9,11 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/admin.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"
+        integrity="sha512-CMF3tQtjOoOJoOKlsS7/2loJlkyctwzSoDK/S40iAB+MqWSaf50uObGQSk5Ny/gfRhRCjNLvoxuCvdnERU4WGg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 </head>
 
 <body>
@@ -50,25 +55,25 @@
             <a class="btn border-0" id="menu-btn"><i class="bx bx-menu"></i></a>
         </nav>
         <legend class="title-page">Dashboard</legend>
-       
-<div class="container-tabs">
-    <ul class="nav nav-tabs w-100">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-    </ul>
-    <div class="container-glid">
-        
-    </div>
-</div>
 
-  
+        <div class="container-tabs">
+            <ul class="nav nav-tabs w-100">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+            <div class="container-glid">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+
     </div>
 
 </html>
@@ -85,6 +90,32 @@
         sidebar.classList.toggle("active-nav");
         container.classList.toggle("active-cont");
     });
+
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Red',
+                'Blue',
+                'Yellow'
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300, 50, 100],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+    });
+
+
 
 </script>
 </body>
