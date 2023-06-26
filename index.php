@@ -24,13 +24,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Colaborador</a>
                     </li>
                 </ul>
             </div>
@@ -71,319 +74,10 @@
             </button>
         </div>
     </div>
-    <div id="carouselExampleInterval2" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
-                <div class="texto-servicos">
-                    <span>Lorem ipsum dolor sit amet consectetur.</span>
-                    <legend>Serviço 1</legend>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus provident<br> dignissimos id
-                        natus a soluta voluptates fuga rem minus recusandae laudantium rerum,<br> voluptatibus minima
-                        deleniti alias assumenda facilis molestiae atque?</p>
-                </div>
-                <div class="image-servicos">
-                    <img src="https://placehold.co/1200x600" class="d-block w-100 carrousel-image" alt="...">
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <div class="texto-servicos">
-                    <span>Lorem ipsum dolor sit amet consectetur.</span>
-                    <legend>Serviço 2</legend>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus provident<br> dignissimos id
-                        natus a soluta voluptates fuga rem minus recusandae laudantium rerum,<br> voluptatibus minima
-                        deleniti alias assumenda facilis molestiae atque?</p>
-                </div>
-                <div class="image-servicos">
-                    <img src="https://placehold.co/1200x600" class="d-block w-100 carrousel-image" alt="...">
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <div class="texto-servicos">
-                    <span>Lorem ipsum dolor sit amet consectetur.</span>
-                    <legend>Serviço 3</legend>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus provident<br> dignissimos id
-                        natus a soluta voluptates fuga rem minus recusandae laudantium rerum,<br> voluptatibus minima
-                        deleniti alias assumenda facilis molestiae atque?</p>
-                </div>
-                <div class="image-servicos">
-                    <img src="https://placehold.co/1200x600" class="d-block w-100 carrousel-image" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval2"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval2"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
 
-
-
-
-    <section class="teste" style="background-color: #A2D6F3; overflow-x: hidden;">
-
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner2">
-                <div class="carousel-item active">
-                    <div class="cards-wrapper">
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="cards-wrapper">
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="cards-wrapper">
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-    </section>
-
-
-
-    <section style="background-color: #A2D6F3; overflow-x: hidden;">
-        <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner2">
-                <div class="carousel-item active">
-                    <div class="cards-wrapper">
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="cards-wrapper">
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="cards-wrapper">
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/1200x600" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
-
-
+    <?php require_once 'view/parts/cards_servicos.php'; ?>
+    <?php require_once 'view/parts/cards_parceiros.php'; ?>
+    <?php require_once 'view/parts/cards_feedback.php'; ?>
 
     <section style="height: auto; background-color: #A2D6F3;">
         <div class="container">
@@ -458,32 +152,9 @@
             </div>
         </div>
     </section>
-    <footer class=" text-center text-white footer-color">
-        <div class="container p-4 pb-0" style="margin-top: 3%;">
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn text-white redes" style="background-color: #3b5998;" href="#" role="button">
-                    <i class="fab fa-facebook-f" style="margin-left: -1px;"></i>
-                </a>
-                <!-- Twitter -->
-                <a class="btn text-white redes" style="background-color: #55acee;" href="#" role="button">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <!-- Instagram -->
-                <a class="btn text-white redes" style="background-color: #ac2bac;" href="#" role="button">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <!-- Linkedin -->
-                <a class="btn text-white redes" style="background-color: #0082ca;" href="#" role="button">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </section>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">Ong-Acme.com</a>
-        </div>
-    </footer>
+
+    <?php require_once 'view/parts/rodape.php'; ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
