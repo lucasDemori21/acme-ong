@@ -58,7 +58,7 @@
                 <span>Usuário ou senha incorretos! Tente novamente</span>
             </div>
             <button class="botao-form" id="botao-login" type="button" onclick="autenticar()" >Entrar</button>
-            <span>Não possui uma conta de colaborador? Entre em contato <a href="#">Clicando aqui</a>.</span>
+            <span>Não possui uma conta de colaborador? Entre em contato <a href="https://wa.link/1szmxe" target="_blank">Clicando aqui</a>.</span>
         </form>
     </div>
 
