@@ -83,12 +83,12 @@ body {
 
 .container-glid{
     width: 100%;
-    height: 470px;
+    height: 45rem;
     background-color: rgba(36, 36, 36, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2% 0 2% 10%;
+    margin: 2% 0 2% 0%;
     border-radius: 10px;
 }
 
@@ -217,4 +217,8 @@ body {
     width: 50%;
     margin-top: 2%;
     text-align: center;
+}
+
+.chart-gh{
+    width: 50%;
 }

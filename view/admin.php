@@ -1,7 +1,14 @@
 <?php require_once 'parts/cabecalho.php'; ?>
 
             <div class="container-glid">
-                <canvas id="myChart"></canvas>
+                
+                   
+    <div class="chart-gh">
+
+        <canvas id="myChart"></canvas>
+    </div>  
+                    
+                
             </div>
         </div>
 
