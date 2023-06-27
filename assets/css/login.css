@@ -71,4 +71,13 @@
     background-color: #36aae9;
   }
 
-  
+  #aviso-erro span{
+    color: rgb(199, 73, 73);
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  #aviso-erro{
+    display: none;
+    text-align: center;
+  }

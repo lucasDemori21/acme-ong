@@ -54,6 +54,9 @@
                 <label for="password">Senha </label>
                 <input id="password" type="password" placeholder="Insira sua senha" name="password"/>
             </div>
+            <div id="aviso-erro">
+                <span>Usuário ou senha incorretos! Tente novamente</span>
+            </div>
             <button class="botao-form" id="botao-login" type="button" onclick="autenticar()" >Entrar</button>
             <span>Não possui uma conta de colaborador? Entre em contato <a href="#">Clicando aqui</a>.</span>
         </form>
@@ -85,7 +88,7 @@
                     if(msg == 'verificado'){
                         window.location.href = "view/admin.php?sts="+msg;
                     }else{
-                        
+                        document.getElementById('aviso-erro').style.display = "inline";
                     }
                 });
             }else{
