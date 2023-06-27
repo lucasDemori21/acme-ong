@@ -221,4 +221,8 @@ body {
 
 .chart-gh{
     width: 50%;
+    margin: auto;
+}
+.chart-gh canvas{
+    margin: 5%;
 }
