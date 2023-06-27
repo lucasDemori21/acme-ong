@@ -24,15 +24,14 @@ $result = $stmt->get_result();
 
 // Process the results
 while ($login = $result->fetch_assoc()) {
-
-    // Do something with each row
-    echo "Email: " . $login['email'] . ", Senha: " . $login['senha'] . "<br>";
+    if($login['email'] == $email && $login['senha'] == $senha ){
+        echo 'verificado';
+        exit();
+    }else{
+        echo 'error';
+        exit();
+    }
 }
-
-// Close the statement and the connection
 $stmt->close();
 $mysqli->close();
-
-echo 'verificado';
-
 ?>

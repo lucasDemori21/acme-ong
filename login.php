@@ -70,10 +70,9 @@
     <script>
 
         function autenticar(){
-            
+
             const email = $('#email').val();
             const senha = $('#password').val();
-            
 
             if(email != '' && senha != ''){
                 $.ajax({
@@ -82,6 +81,9 @@
                     data: {
                         email: email,
                         senha: senha
+                    },
+                    beforeSend: function(){
+                        $("#botao-login").text('Verificando...');
                     }
                 })
                 .done((msg)=>{
@@ -89,10 +91,11 @@
                         window.location.href = "view/admin.php?sts="+msg;
                     }else{
                         document.getElementById('aviso-erro').style.display = "inline";
+                        $("#botao-login").text('Entrar');
                     }
                 });
             }else{
-                alert('Faltou preenchimento de algum campo!')
+                alert('Preencha todos os campos!')
             }
         }
 
