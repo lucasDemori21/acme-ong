@@ -40,11 +40,32 @@
             </div>
         </div>
     </nav>
+
+    <div class="container-login">
+        <h2 class="login-title">Login</h2>
+        <form class="login-form">
+            <div class="input-form">
+                <label for="email">Email </label>
+                <input id="email" type="email" placeholder="me@exemplo.com" name="email" required/>
+            </div>
+            <div class="input-form">
+                <label for="password">Senha </label>
+                <input id="password" type="password" placeholder="Insira sua senha" name="password" required/>
+            </div>
+            <button class="botao-form" type="button" value="Login">Entrar</button>
+            <span>Não possui uma conta de colaborador? Entre em contato <a href="#">Clicando aqui</a>.</span>
+        </form>
+    </div>
+
     <?php require_once 'view/parts/rodape.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+    <script>
+        
+
+    </script>
 </body>
 
 </html>

@@ -31,6 +31,10 @@ height: auto;
     height: auto;
 }
 
+.card-title{
+    overflow: hidden;
+}
+
 .apr-texto{
     height: auto;
     width: 100%;
@@ -173,10 +177,4 @@ height: auto;
 
 .collapse .navbar-nav{
     text-align: center;
-}
-
-.rodape{
-    bottom: 0;
-    position: absolute;
-    width: 100%;
 }

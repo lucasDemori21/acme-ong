@@ -1,4 +1,4 @@
-<section style="background-color: #A2D6F3; overflow-x: hidden;">
+<section style="background-color: #A2D6F3;">
         <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner2">
                 <div class="carousel-item active">
