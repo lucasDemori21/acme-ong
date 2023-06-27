@@ -6,7 +6,7 @@
     overflow-x: hidden;
 }
 body{
-    background-color: #A2D6F3;
+    background-color: #A2D6F3 !important;
 }
 
 .navbar{
@@ -173,4 +173,10 @@ height: auto;
 
 .collapse .navbar-nav{
     text-align: center;
+}
+
+.rodape{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }

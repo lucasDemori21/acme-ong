@@ -1,4 +1,4 @@
-<footer class=" text-center text-white footer-color">
+<footer class=" text-center text-white footer-color rodape">
         <div class="container p-4 pb-0" style="margin-top: 3%;">
             <section class="mb-4">
                 <!-- Facebook -->
