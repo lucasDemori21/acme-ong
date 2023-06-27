@@ -73,6 +73,7 @@
 
             const email = $('#email').val();
             const senha = $('#password').val();
+        
 
             if(email != '' && senha != ''){
                 $.ajax({
