@@ -33,7 +33,7 @@
                         <a class="nav-link" href="#">Link 2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Colaborador</a>
+                        <a class="nav-link" href="login.php">Colaborador</a>
                     </li>
                 </ul>
             </div>

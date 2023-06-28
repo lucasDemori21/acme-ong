@@ -83,5 +83,7 @@
 
   #aviso-erro{
     display: none;
+    width: 70%;
+    margin: auto;
     text-align: center;
   }
