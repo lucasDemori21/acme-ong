@@ -31,22 +31,20 @@
 <script src="../assets/js/chart.js"></script>
 <script>
 window.onload = function(){
-        $.ajax({
-            url: '../assets/ajax/busca_dados_ajax.php',
-            method: 'post',
-        })
-        .done( function(obj) {
+    $.ajax({
+    url: '../assets/ajax/busca_dados_ajax.php',
+    method: 'post',
+    dataType: 'json'
+})
+.done(function(obj) {
+    var dados = obj.dados;
+    var nome = dados.dados_user;
+    var image = dados.dados_image;
+    var funcao = dados.dados_funcao;
 
-            var dados = obj.dados;
-            console.log(dados);
-
-            var nome = dados.dados_user;
-            var image = dados.dados_image;
-            var funcao = dados.dados_funcao;
-
-            alert(nome+', '+ image+', ' + funcao);
-
-        })
+    $('#username').text(nome);
+    $('#funcao').text(funcao);
+})
     };
 </script>
 </body>

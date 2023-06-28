@@ -83,7 +83,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <h1 class="mb-3" style="overflow: hidden;">Contact Us</h1>
+                    <h1 class="mb-3" style="overflow: hidden;">Solicitar</h1>
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">

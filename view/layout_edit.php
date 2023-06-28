@@ -1,4 +1,7 @@
-<?php require_once 'parts/cabecalho.php'; ?>
+<?php 
+require_once 'parts/cabecalho.php'; 
+require_once '../config/conexao.php';
+?>
     <div class="p-1 my-container active-cont">
         <nav class="navbar top-navbar navbar-light px-5">
             <a class="btn border-0" id="menu-btn"><i class="bx bx-menu"></i></a>
@@ -18,19 +21,22 @@
                 </li>
             </ul>
             <div class="layout-image">
+                <?php 
+                $sql = "SELECT * FROM images";
+                $result = mysqli_query($conn, $sql);
+                while($image = mysqli_fetch_assoc($result)){
+                ?>
+                
+                <div class="container-image">
+                    <div class="image-up">
+                        <img src="../assets/imgs/<?php echo $image['nome_imagem'];?>" alt="Imagem<?php echo $image['id']; ?>">
+                    </div> 
+                </div>
+                
+                <?php    
+                }
+                ?>
 
-                <div class="container-image">
-                    
-                </div>
-                <div class="container-image">
-                    
-                </div>
-                <div class="container-image">
-                    
-                </div>
-                <div class="container-image">
-                    
-                </div>
             </div>
         </div>
 

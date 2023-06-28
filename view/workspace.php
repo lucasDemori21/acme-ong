@@ -28,47 +28,77 @@
             </div>
             <div class="layout-image">
                 <div class="container-workspace">
+                    <?php
+                    $sql_user = "SELECT * FROM user";
+                    $result_user = mysqli_query($conn, $sql_user);
+
+                    while($solic_ac = mysqli_fetch_assoc($result_ac)){
+                    ?>
                     <div class="solicitacao">
                         <div class="comp-solicitacao">
                             <img class="comp-image" src="/assets/imgs/placeholder-image.png" alt="perfil">
                             <div class="comp-name">
-                                <h5 class="comp">Nome usuário</h5>
-                                <p class="comp">Função</p>
+                                <h5 class="comp"><?php echo $solic_ac['nome'];?></h5>
+                                <input type="hidden" name="idUser" id="idUser<?php echo $solic_ac['id'];?>" value="idUser<?php echo $solic_ac['id'];?>">
                             </div>
                         </div>
-                        <textarea name="texto" id="texto" cols="30" rows="10" disabled>
+                        <textarea name="texto" id="texto" cols="30" rows="10" readonly>
+                            <?php echo $solic_ac['descricao'];?>
                         </textarea>
                         <div class="button-solicitacao">
                             <div class="button-size d-flex justify-content-end">
-                                <button type="button" class="btn btn-danger">Recusar</button>
-                                <button type="button" class="btn btn-success">Aceitar</button>
+                                <button type="button" onclick="recusar();" class="btn btn-danger">Recusar</button>
+                                <button type="button" onclick="aceitar();" class="btn btn-success">Aceitar</button>
                             </div>
                         </div>
                     </div>    
+                    <?php
+                    }         
+                    ?>
                 </div>
-           
-         
-                    <div class="container-workspace">
-                        <div class="solicitacao">
-                            <div class="comp-solicitacao">
-                                <img class="comp-image" src="/assets/imgs/placeholder-image.png" alt="perfil">
-                                <div class="comp-name">
-                                    <h5 class="comp">Nome usuário</h5>
-                                    <p class="comp">Função</p>
-                                </div>
+                <div class="container-workspace">
+                    <?php 
+                    $sql_solicitacao = "SELECT * FROM solicitacoes_ac";
+                    $result_ac = mysqli_query($conn, $sql_solicitacao);
+
+                    while($solic_ac = mysqli_fetch_assoc($result_ac)){
+                    ?>
+                    <div class="solicitacao">
+                        <div class="comp-solicitacao">
+                            <img class="comp-image" src="/assets/imgs/placeholder-image.png" alt="perfil">
+                            <div class="comp-name">
+                                <h5 class="comp"><?php echo $solic_ac['nome'];?></h5>
+                                <input type="hidden" name="idUser" id="idUser<?php echo $solic_ac['id'];?>" value="idUser<?php echo $solic_ac['id'];?>">
+
                             </div>
-                            <textarea name="texto" id="texto" cols="30" rows="10" disabled>
-                            </textarea>
-                            <div class="button-solicitacao">
-                                <div class="button-size d-flex justify-content-end">
-                                    <select name="parceiros" id="parceiros" class="form-select w-50">
-                                        <option value="">Selecione o parceiro</option>
-                                    </select>
-                                    <button type="button" class="btn btn-success">Enviar</button>
-                                </div>
+                        </div>
+                        <textarea name="texto" id="texto" cols="30" rows="10" disabled>
+                            <?php echo $solic_ac['descricao'];?>
+                        </textarea>
+                        <div class="button-solicitacao">
+                            <div class="button-size d-flex justify-content-end">
+                                <select name="parceiros" id="parceiros" class="form-select w-50">
+                                    <option value="" disabled>Selecione o parceiro</option>
+                                    <?php
+                                    $sql_parceiros = "SELECT * FROM parceiros";
+                                    $result_parc = mysqli_query($conn, $sql_parceiros);
+
+                                    while($solic_pr = mysqli_fetch_assoc($result_ac)){        
+                                    ?>
+                                    <option value="<?php echo $solic_pr['id_parceiro'];?>"><?php echo $solic_pr['nome_empresa'] . ' - ' . $solic_pr['responsavel'];?></option>
+                                    <?php
+                                    }
+                                    ?>
+
+                                </select>
+                                <button type="button" onclick="encaminhar();" class="btn btn-success">Enviar</button>
                             </div>
-                        </div> 
-                    </div>
+                        </div>
+                    </div> 
+                    <?php
+                    }
+                    ?>
+                </div>
            
             </div>
         </div>
@@ -83,6 +113,10 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
 <script>
+
+
+
+
     var menu_btn = document.querySelector("#menu-btn");
     var sidebar = document.querySelector("#sidebar");
     var container = document.querySelector(".my-container");
