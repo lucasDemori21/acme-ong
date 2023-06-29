@@ -83,59 +83,96 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <h1 class="mb-3" style="overflow: hidden;">Solicitar</h1>
+                    <h1 class="mb-3" style="overflow: hidden; text-align: center;">Solicitar</h1>
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="your-name" class="form-label">Your Name</label>
+                                <label for="your-name" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="your-name" name="your-name" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="your-surname" class="form-label">Your Surname</label>
+                                <label for="your-surname" class="form-label">Email</label>
                                 <input type="text" class="form-control" id="your-surname" name="your-surname" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="your-email" class="form-label">Your Email</label>
+                                <label for="your-surname" class="form-label">Cpf</label>
+                                <input type="text" class="form-control" id="your-surname" name="your-surname" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="your-surname" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="your-surname" name="your-surname" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="your-email" class="form-label">Telefone</label>
                                 <input type="email" class="form-control" id="your-email" name="your-email" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="your-subject" class="form-label">Your Subject</label>
+                                <label for="your-subject" class="form-label">Estado</label>
                                 <input type="text" class="form-control" id="your-subject" name="your-subject">
                             </div>
                             <div class="col-md-6">
-                                <label for="your-name" class="form-label">Your Name</label>
+                                <label for="your-name" class="form-label">Cidade</label>
                                 <input type="text" class="form-control" id="your-name" name="your-name" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="your-surname" class="form-label">Your Surname</label>
+                                <label for="your-surname" class="form-label">Endereço</label>
                                 <input type="text" class="form-control" id="your-surname" name="your-surname" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="your-email" class="form-label">Your Email</label>
+                                <label for="your-email" class="form-label">Número</label>
                                 <input type="email" class="form-control" id="your-email" name="your-email" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="your-subject" class="form-label">Your Subject</label>
+                                <label for="your-subject" class="form-label">Renda Familiar</label>
                                 <input type="text" class="form-control" id="your-subject" name="your-subject">
                             </div>
+                            <h4 style="margin-top: 5%;">Dependente 1</h4>
                             <div class="col-md-6">
-                                <label for="your-name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" id="your-name" name="your-name" required>
+                                <label for="your-name" class="form-label">Nome completo</label>
+                                <input type="text" class="form-control" id="your-name" name="your-name">
                             </div>
                             <div class="col-md-6">
-                                <label for="your-surname" class="form-label">Your Surname</label>
-                                <input type="text" class="form-control" id="your-surname" name="your-surname" required>
+                                <label for="your-surname" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="your-surname" name="your-surname">
+                            </div>
+                            <h4>Dependente 2</h4>
+                            <div class="col-md-6">
+                                <label for="your-name" class="form-label">Nome completo</label>
+                                <input type="text" class="form-control" id="your-name" name="your-name">
                             </div>
                             <div class="col-md-6">
-                                <label for="your-email" class="form-label">Your Email</label>
-                                <input type="email" class="form-control" id="your-email" name="your-email" required>
+                                <label for="your-surname" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="your-surname" name="your-surname">
+                            </div>
+                            <h4>Dependente 3</h4>
+                            <div class="col-md-6">
+                                <label for="your-name" class="form-label">Nome completo</label>
+                                <input type="text" class="form-control" id="your-name" name="your-name">
                             </div>
                             <div class="col-md-6">
-                                <label for="your-subject" class="form-label">Your Subject</label>
-                                <input type="text" class="form-control" id="your-subject" name="your-subject">
+                                <label for="your-surname" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="your-surname" name="your-surname">
+                            </div>
+                            <h4>Dependente 4</h4>
+                            <div class="col-md-6">
+                                <label for="your-name" class="form-label">Nome completo</label>
+                                <input type="text" class="form-control" id="your-name" name="your-name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="your-surname" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="your-surname" name="your-surname">
+                            </div>
+                            <h4>Dependente 5</h4>
+                            <div class="col-md-6">
+                                <label for="your-name" class="form-label">Nome completo</label>
+                                <input type="text" class="form-control" id="your-name" name="your-name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="your-surname" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="your-surname" name="your-surname">
                             </div>
                             <div class="col-12">
-                                <label for="your-message" class="form-label">Your Message</label>
+                                <label for="your-message" class="form-label">Insira a descrição da sua necessidade.</label>
                                 <textarea class="form-control" id="your-message" name="your-message" rows="5"
                                     required></textarea>
                             </div>
@@ -158,6 +195,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+    <script>
+
+    </script>
 </body>
 
 </html>

@@ -5,6 +5,9 @@
     height: 100%;
     overflow-x: hidden;
 }
+h4{
+    overflow: hidden;
+}
 body{
     background-color: #A2D6F3 !important;
 }
