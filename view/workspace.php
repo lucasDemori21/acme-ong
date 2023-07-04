@@ -1,4 +1,7 @@
-<?php require_once 'parts/cabecalho.php'; ?>
+<?php 
+require_once 'parts/cabecalho.php'; 
+require_once '../config/conexao.php';
+?>
     <div class="p-1 my-container active-cont">
         <nav class="navbar top-navbar navbar-light px-5">
             <a class="btn border-0" id="menu-btn"><i class="bx bx-menu"></i></a>
@@ -29,26 +32,26 @@
             <div class="layout-image">
                 <div class="container-workspace">
                     <?php
-                    $sql_user = "SELECT * FROM user";
+                    $sql_user = "SELECT id_cliente, nome, texto_solicitacao  FROM ongacme.user";
                     $result_user = mysqli_query($conn, $sql_user);
 
-                    while($solic_ac = mysqli_fetch_assoc($result_ac)){
+                    while($solic_ac = mysqli_fetch_assoc($result_user)){
                     ?>
-                    <div class="solicitacao">
+                    <div class="solicitacao solicitacao-<?php echo $solic_ac['id_cliente'];?>">
                         <div class="comp-solicitacao">
                             <img class="comp-image" src="/assets/imgs/placeholder-image.png" alt="perfil">
                             <div class="comp-name">
                                 <h5 class="comp"><?php echo $solic_ac['nome'];?></h5>
-                                <input type="hidden" name="idUser" id="idUser<?php echo $solic_ac['id'];?>" value="idUser<?php echo $solic_ac['id'];?>">
+                                <input type="hidden" name="idUser" id="idUser<?php echo @$solic_ac['id_cliente'];?>" value="idUser<?php echo @$solic_ac['id_cliente'];?>">
                             </div>
                         </div>
                         <textarea name="texto" id="texto" cols="30" rows="10" readonly>
-                            <?php echo $solic_ac['descricao'];?>
+                            <?php echo trim($solic_ac['texto_solicitacao']);?>
                         </textarea>
                         <div class="button-solicitacao">
                             <div class="button-size d-flex justify-content-end">
-                                <button type="button" onclick="recusar();" class="btn btn-danger">Recusar</button>
-                                <button type="button" onclick="aceitar();" class="btn btn-success">Aceitar</button>
+                                <button type="button" onclick="recusar(<?php echo $solic_ac['id_cliente'];?>);" class="btn btn-danger">Recusar</button>
+                                <button type="button" onclick="aceitar(<?php echo $solic_ac['id_cliente'];?>;" class="btn btn-success">Aceitar</button>
                             </div>
                         </div>
                     </div>    
@@ -113,10 +116,6 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
 <script>
-
-
-
-
     var menu_btn = document.querySelector("#menu-btn");
     var sidebar = document.querySelector("#sidebar");
     var container = document.querySelector(".my-container");
@@ -124,6 +123,10 @@
         sidebar.classList.toggle("active-nav");
         container.classList.toggle("active-cont");
     });
+
+    function aceitar(id){
+        
+    }
 </script>
 </body>
 

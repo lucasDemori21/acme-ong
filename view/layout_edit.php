@@ -22,15 +22,16 @@ require_once '../config/conexao.php';
             </ul>
             <div class="layout-image">
                 <?php 
-                $sql = "SELECT * FROM images";
+                $sql = "SELECT * FROM ongacme.imagens";
                 $result = mysqli_query($conn, $sql);
                 while($image = mysqli_fetch_assoc($result)){
                 ?>
                 
                 <div class="container-image">
                     <div class="image-up">
-                        <img src="../assets/imgs/<?php echo $image['nome_imagem'];?>" alt="Imagem<?php echo $image['id']; ?>">
-                    </div> 
+                        <img src="../assets/imgs/<?php echo $image['nome_imagem'];?>.png" alt="Imagem-<?php echo $image['id_imagem']; ?>">
+                    </div>
+                    <button type="button" id="botao-<?php echo $image['id_imagem']; ?>" onclick="selecionar('<?php echo $image['nome_imagem'];?>', <?php echo $image['id_imagem']; ?>);" class="image-button">Selecionar</button> 
                 </div>
                 
                 <?php    
@@ -55,6 +56,29 @@ require_once '../config/conexao.php';
         sidebar.classList.toggle("active-nav");
         container.classList.toggle("active-cont");
     });
+
+    function selecionar(name_image, id_image){
+        $.ajax({
+            url: '../assets/ajax/upload_imagens.php',
+            method: 'post',
+            data: {
+                name_image: name_image
+            },
+            beforeSend: function(){
+                $("#botao-"+id_image).text('Verificando...');
+            }
+        })
+        .done(function(obj) {
+            if(obj == 'success'){
+                $("#botao-"+id_image).text("Selecionado");
+            }else{
+                alert('Ocorreu algum erro, Tente novamente.')
+                $("#botao-"+id_image).text("Selecionar");
+            }
+        })
+    }
+
+
 </script>
 </body>
 
