@@ -15,16 +15,18 @@ DROP SCHEMA IF EXISTS `ongacme` ;
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `ongacme` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `ongacme`;
 USE `ongacme` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `ongacme`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`user` (
-  `id_cliiente` INT NOT NULL AUTO_INCREMENT,
+  `id_cliente` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
+  `cpf` VARCHAR(20),
+  `data_nasc` date,
   `telefone` VARCHAR(20),
   `cep` VARCHAR(45),
   `estado` VARCHAR(2),
@@ -34,12 +36,29 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`user` (
   `numero` VARCHAR(45),
   `renda_familiar` DECIMAL(10,2),
   `texto_solicitacao` VARCHAR(1000),
-  PRIMARY KEY (`id_cliiente`),
+  PRIMARY KEY (`id_cliente`),
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE);
+  
+  INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`)
+VALUES ('João Oliveira', 'joao.oliveira@email.com', '12345678901', '1990-01-01',
+        '987654321', '12345678', 'SP', 'São Paulo', 'Centro', 'Rua A', '123', 5000.00,
+        (SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 50)));
+        
+        INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`)
+VALUES ('Maria Silva', 'maria.silva@email.com', '98765432102', '1985-05-10',
+        '123456789', '87654321', 'RJ', 'Rio de Janeiro', 'Copacabana', 'Avenida B', '456', 8000.00,
+        'Esta é uma solicitação de teste para Maria Silva.');
+
+INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`)
+VALUES ('Carlos Oliveira', 'carlos.oliveira@email.com', '12345098765', '1992-09-20',
+        '987654321', '54321678', 'MG', 'Belo Horizonte', 'Savassi', 'Rua C', '789', 6000.00,
+        'Gostaria de solicitar uma análise de crédito para Carlos Oliveira.');
+
+
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`parceiros`
+-- Table `ongacme`.`parceiros`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`parceiros` (
   `id_parceiro` INT NOT NULL AUTO_INCREMENT,
@@ -58,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`parceiros` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`solicitacoes_ac`
+-- Table `ongacme`.`solicitacoes_ac`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`solicitacoes_ac` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
@@ -75,10 +94,37 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`solicitacoes_ac` (
   `texto_solicitacao` VARCHAR(1000),
   PRIMARY KEY (`id_cliente`),
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE);
-
+  
+  -- -----------------------------------------------------
+-- Table `ongacme`.`colaboradores`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ongacme`.`colaboradores` (
+  `id_colaborador` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `nome_completo` VARCHAR(255),
+  `data_nasc` DATE,
+  `cpf` VARCHAR(20),
+  `email` VARCHAR(255),
+  `senha` VARCHAR(255),
+  `telefone` VARCHAR(20),
+  `cep` VARCHAR(45),
+  `estado` VARCHAR(2),
+  `cidade` VARCHAR(45),
+  `bairro` VARCHAR(45),
+  `funcao` VARCHAR(100),
+  `endereco` VARCHAR(45),
+  `numero` VARCHAR(45),
+  `salario` DECIMAL(10,2),
+  `sts` INT,
+  `data_inicio` DATETIME);
+  
+  
+  INSERT INTO `ongacme`.`colaboradores` 
+(`nome_completo`, `data_nasc`, `cpf`, `email`, `senha`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `funcao`, `endereco`, `numero`, `salario`, `sts`, `data_inicio`) 
+VALUES 
+('Administrador', '1990-05-15', '123.456.789-00', 'admin@teste.com', '1234', '(11) 98765-4321', '01234-567', 'SP', 'São Paulo', 'Centro', 'Diretor', 'Rua Principal', '123', 5000.00, '1', '2023-06-20 10:00:00');
 
 -- -----------------------------------------------------
--- Table `mydb`.`solicitacoes_rec`
+-- Table `ongacme`.`solicitacoes_rec`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`solicitacoes_rec` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
@@ -98,16 +144,19 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`solicitacoes_rec` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`imagens`
+-- Table `ongacme`.`imagens`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`imagens` (
-  `id_imagem` INT NOT NULL,
+  `id_imagem` INT NOT NULL AUTO_INCREMENT,
   `nome_imagem` VARCHAR(255),
   PRIMARY KEY (`id_imagem`));
+  
+  insert into ongacme.imagens (id_imagem, nome_imagem) values( null, 'icons8-doação-64');
+  insert into ongacme.imagens (id_imagem, nome_imagem) values( null, 'logo');
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`dependentes`
+-- Table `ongacme`.`dependentes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`dependentes` (
   `id_dependente` INT NOT NULL,
@@ -122,19 +171,26 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`dependentes` (
     REFERENCES `ongacme`.`user` (`nome`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+    
+    INSERT INTO `dependentes` (`id_dependente`, `id_cliente`, `nome_dependente`, `data_nasc`, `renda_dependente`)
+VALUES (1, (SELECT `id_cliente` FROM `user` WHERE `nome` = 'Maria Silva'), 'Ana Silva', '2010-03-15', 1000.00);
+
+INSERT INTO `dependentes` (`id_dependente`, `id_cliente`, `nome_dependente`, `data_nasc`, `renda_dependente`)
+VALUES (2, (SELECT `id_cliente` FROM `user` WHERE `nome` = 'Carlos Oliveira'), 'Pedro Oliveira', '2015-08-20', 500.00);
+
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`textos`
+-- Table `ongacme`.`textos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`textos` (
+CREATE TABLE IF NOT EXISTS `ongacme`.`textos` (
   `id_texto` INT NOT NULL,
   `descricao` VARCHAR(1000) NOT NULL,
   PRIMARY KEY (`id_texto`));
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`encaminhados`
+-- Table `ongacme`.`encaminhados`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`encaminhados` (
   `id_encaminhado` INT NOT NULL AUTO_INCREMENT,
@@ -150,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`encaminhados` (
     ON UPDATE NO ACTION,
   CONSTRAINT `cliente_enc`
     FOREIGN KEY (`id_cliente`)
-    REFERENCES `ongacme`.`user` (`id_cliiente`)
+    REFERENCES `ongacme`.`user` (`id_cliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
