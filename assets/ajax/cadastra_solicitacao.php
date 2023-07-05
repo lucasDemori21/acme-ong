@@ -67,11 +67,15 @@ if($_POST['descricao'] != ''){
     $descricao = $_POST['descricao'];
 }
 
+if($_POST['sts'] != ''){
+    $sts = $_POST['sts'];
+}
+
 $sql = 'INSERT INTO ongacme.user (id_cliente, nome, email, cpf, data_nasc, telefone, 
-cep, cidade, bairro, endereco, numero, renda_familiar, descricao) 
+cep, cidade, bairro, endereco, numero, renda_familiar, descricao, status_sl) 
 VALUES(null, "'. $name .'", "'. $email .'", "'. $cpf .'", "'. $data_nasc .'", 
 "'. $telephone .'", "'. $cep .'", "'. $state .'", "'. $address .'", 
-"'. $number.'", "'. $renda_familiar .'", "'. $descricao.'")'; 
+"'. $number.'", "'. $renda_familiar .'", "'. $descricao .'", "' . $sts . '")'; 
 
 
 if($result = mysqli_query($conn, $sql)){

@@ -251,6 +251,7 @@
             const dep_5 = $("#dep-5").val();
             const nasc_dep_5 = $("#nasc_dep_5").val();
             const descricao = $("#descricao").val();
+            const sts = 1;
 
             $.ajax({
                 url: '../assets/ajax/cadastra_solicitacao.php',
@@ -277,7 +278,8 @@
                     nasc_dep_4: nasc_dep_4,
                     dep_5 : dep_5,
                     nasc_dep_5: nasc_dep_5,
-                    descricao: descricao
+                    descricao: descricao,
+                    sts: sts
                 },
                 beforeSend: function(){
                     $("#botao-solicitar").text('Enviando...');
