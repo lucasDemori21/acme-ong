@@ -36,23 +36,24 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`user` (
   `numero` VARCHAR(45),
   `renda_familiar` DECIMAL(10,2),
   `texto_solicitacao` VARCHAR(1000),
+  `status_sl` int,
   PRIMARY KEY (`id_cliente`),
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE);
   
-  INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`)
+  INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`, `status_sl`)
 VALUES ('João Oliveira', 'joao.oliveira@email.com', '12345678901', '1990-01-01',
         '987654321', '12345678', 'SP', 'São Paulo', 'Centro', 'Rua A', '123', 5000.00,
-        (SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 50)));
+        'Gostaria de solicitar uma análise de crédito para João Oliveira.', 1);
         
-        INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`)
+        INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`, `status_sl`)
 VALUES ('Maria Silva', 'maria.silva@email.com', '98765432102', '1985-05-10',
         '123456789', '87654321', 'RJ', 'Rio de Janeiro', 'Copacabana', 'Avenida B', '456', 8000.00,
-        'Esta é uma solicitação de teste para Maria Silva.');
+        'Esta é uma solicitação de teste para Maria Silva.', 1);
 
-INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`)
+INSERT INTO `user` (`nome`, `email`, `cpf`, `data_nasc`, `telefone`, `cep`, `estado`, `cidade`, `bairro`, `endereco`, `numero`, `renda_familiar`, `texto_solicitacao`, `status_sl`)
 VALUES ('Carlos Oliveira', 'carlos.oliveira@email.com', '12345098765', '1992-09-20',
         '987654321', '54321678', 'MG', 'Belo Horizonte', 'Savassi', 'Rua C', '789', 6000.00,
-        'Gostaria de solicitar uma análise de crédito para Carlos Oliveira.');
+        'Gostaria de solicitar uma análise de crédito para Carlos Oliveira.', 1);
 
 
 
@@ -74,26 +75,13 @@ CREATE TABLE IF NOT EXISTS `ongacme`.`parceiros` (
   `descricao` VARCHAR(45),
   `logo` VARCHAR(45),
   PRIMARY KEY (`id_parceiro`));
-
-
--- -----------------------------------------------------
--- Table `ongacme`.`solicitacoes_ac`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ongacme`.`solicitacoes_ac` (
-  `id_cliente` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(255),
-  `email` VARCHAR(255),
-  `telefone` VARCHAR(20),
-  `cep` VARCHAR(45),
-  `estado` VARCHAR(2),
-  `cidade` VARCHAR(45),
-  `bairro` VARCHAR(45),
-  `endereco` VARCHAR(45),
-  `numero` VARCHAR(45),
-  `renda_familiar` DECIMAL(10,2),
-  `texto_solicitacao` VARCHAR(1000),
-  PRIMARY KEY (`id_cliente`),
-  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE);
+  
+  INSERT INTO `ongacme`.`parceiros` (`nome_empresa`, `cnpj`, `responsavel`, `cep`, `estado`, `cidade`, `endereco`, `numero`, `bairro`, `descricao`, `logo`) VALUES
+('Empresa A', '12345678901234', 'Responsável A', '12345-678', 'Estado A', 'Cidade A', 'Endereço A', '123', 'Bairro A', 'Descrição A', 'logoA.jpg'),
+('Empresa B', '23456789012345', 'Responsável B', '23456-789', 'Estado B', 'Cidade B', 'Endereço B', '456', 'Bairro B', 'Descrição B', 'logoB.jpg'),
+('Empresa C', '34567890123456', 'Responsável C', '34567-890', 'Estado C', 'Cidade C', 'Endereço C', '789', 'Bairro C', 'Descrição C', 'logoC.jpg'),
+('Empresa D', '45678901234567', 'Responsável D', '45678-901', 'Estado D', 'Cidade D', 'Endereço D', '012', 'Bairro D', 'Descrição D', 'logoD.jpg'),
+('Empresa E', '56789012345678', 'Responsável E', '56789-012', 'Estado E', 'Cidade E', 'Endereço E', '345', 'Bairro E', 'Descrição E', 'logoE.jpg');
   
   -- -----------------------------------------------------
 -- Table `ongacme`.`colaboradores`
@@ -124,31 +112,12 @@ VALUES
 ('Administrador', '1990-05-15', '123.456.789-00', 'admin@teste.com', '1234', '(11) 98765-4321', '01234-567', 'SP', 'São Paulo', 'Centro', 'Diretor', 'Rua Principal', '123', 5000.00, '1', '2023-06-20 10:00:00');
 
 -- -----------------------------------------------------
--- Table `ongacme`.`solicitacoes_rec`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ongacme`.`solicitacoes_rec` (
-  `id_cliente` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(255),
-  `email` VARCHAR(255),
-  `telefone` VARCHAR(20),
-  `cep` VARCHAR(45),
-  `estado` VARCHAR(2),
-  `cidade` VARCHAR(45),
-  `bairro` VARCHAR(45),
-  `endereco` VARCHAR(45),
-  `numero` VARCHAR(45),
-  `renda_familiar` DECIMAL(10,2),
-  `texto_solicitacao` VARCHAR(1000),
-  PRIMARY KEY (`id_cliente`),
-  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE);
-
-
--- -----------------------------------------------------
 -- Table `ongacme`.`imagens`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ongacme`.`imagens` (
   `id_imagem` INT NOT NULL AUTO_INCREMENT,
   `nome_imagem` VARCHAR(255),
+  `status_imagem` int,
   PRIMARY KEY (`id_imagem`));
   
   insert into ongacme.imagens (id_imagem, nome_imagem) values( null, 'icons8-doação-64');

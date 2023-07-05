@@ -25,6 +25,31 @@ require_once '../config/conexao.php';
             }
         })
     }
+
+    function encaminhar(id_cliente){
+        const id = id_cliente
+        const parceiro = $("#parceiros").val();
+
+        $.ajax({
+            url: '../assets/ajax/encaminhamento_ajax.php',
+            method: 'POST',
+            data: {
+                id: id,
+                parceiro: parceiro
+            },
+            beforeSend: function(){
+                $("#botao_enviar_"+id).text('Enviando...');
+            }
+        })
+        .done(function(obj) {
+            if(obj == 'success'){
+                location.reload();
+            }else{
+                alert('ERRO')
+            }
+        })
+        
+    }
 </script>
     <div class="p-1 my-container active-cont">
         <nav class="navbar top-navbar navbar-light px-5">
@@ -53,7 +78,7 @@ require_once '../config/conexao.php';
                 </div>
             </div>
             <div class="layout-image">
-                <div class="container-solicitacoes">
+                <div class="container-workspace">
                     <?php
                     $sql_user = "SELECT id_cliente, nome, texto_solicitacao, status_sl  FROM ongacme.user";
                     $result_user = mysqli_query($conn, $sql_user);
@@ -85,7 +110,7 @@ require_once '../config/conexao.php';
                     }         
                     ?>
                 </div>
-                <div class="container-aceites">
+                <div class="container-workspace">
                     <?php 
                     $sql_solicitacao = "SELECT * FROM ongacme.user";
                     $result_ac = mysqli_query($conn, $sql_solicitacao);
@@ -99,7 +124,6 @@ require_once '../config/conexao.php';
                             <div class="comp-name">
                                 <h5 class="comp"><?php echo $solic_en['nome'];?></h5>
                                 <input type="hidden" name="idUser" id="idUser<?php echo $solic_en['id_cliente'];?>" value="idUser<?php echo $solic_en['id_cliente'];?>">
-
                             </div>
                         </div>
                         <textarea name="texto" id="texto" cols="30" rows="10" disabled>
@@ -119,9 +143,8 @@ require_once '../config/conexao.php';
                                     <?php
                                     }
                                     ?>
-
                                 </select>
-                                <button type="button" onclick="encaminhar();" class="btn btn-success">Enviar</button>
+                                <button type="button" id="botao_enviar_<?php echo $solic_en['id_cliente'];?>" onclick="encaminhar(<?php echo $solic_en['id_cliente'];?>);" class="btn btn-success">Enviar</button>
                             </div>
                         </div>
                     </div> 
