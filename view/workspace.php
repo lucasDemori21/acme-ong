@@ -124,9 +124,6 @@ require_once '../config/conexao.php';
         container.classList.toggle("active-cont");
     });
 
-    function aceitar(id){
-        
-    }
 </script>
 </body>
 
