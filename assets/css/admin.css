@@ -144,10 +144,13 @@ body {
         width: 100%;
         margin: 1% auto;
     }
+    .layout-image .title{
+        width: 100%;
+    }
 }
 
 .container-workspace{
-    width: 49%;
+    width: 100%;
     padding: 2% 0;
     height: auto;
     background-color: rgba(36, 36, 36, 0.5);
@@ -215,13 +218,8 @@ body {
     font-size: 12px;
 }
 
-.title-workspace{
-    width: 100%;
-    display: flex;
-}
-
 .title{
-    width: 50%;
+    width: 49%;
     margin-top: 2%;
     text-align: center;
 }
