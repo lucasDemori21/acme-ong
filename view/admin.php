@@ -1,4 +1,5 @@
 <?php require_once 'parts/cabecalho.php'; ?>
+
 <div class="p-1 my-container active-cont">
         <nav class="navbar top-navbar navbar-light px-5">
             <a class="btn border-0" id="menu-btn"><i class="bx bx-menu"></i></a>
@@ -35,17 +36,17 @@ window.onload = function(){
     url: '../assets/ajax/busca_dados_ajax.php',
     method: 'post',
     dataType: 'json'
-})
-.done(function(obj) {
-    var dados = obj.dados;
-    var nome = dados.dados_user;
-    var image = dados.dados_image;
-    var funcao = dados.dados_funcao;
+    })
+    .done(function(obj) {
+        var dados = obj.dados;
+        var nome = dados.dados_user;
+        var image = dados.dados_image;
+        var funcao = dados.dados_funcao;
 
-    $('#username').text(nome);
-    $('#funcao').text(funcao);
-})
-    };
+        $('#username').text(nome);
+        $('#funcao').text(funcao);
+    })
+};
 </script>
 </body>
 

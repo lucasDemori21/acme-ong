@@ -1,5 +1,12 @@
 <div id="carouselExampleInterval2" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
+            <?php
+            $sql_serv = "SELECT id_imagem, nome_imagem FROM imagens WHERE id_imagem = '" . 1 . "'";
+            $result = mysqli_query($conn, $sql_serv);
+            while($serv = mysqli_fetch_assoc($result)){
+            
+            ?>
+
             <div class="carousel-item active" data-bs-interval="5000">
                 <div class="texto-servicos">
                     <span>Lorem ipsum dolor sit amet consectetur.</span>
@@ -12,7 +19,9 @@
                     <img src="https://placehold.co/1200x600" class="d-block w-100 carrousel-image" alt="...">
                 </div>
             </div>
-            <div class="carousel-item" data-bs-interval="5000">
+            <?php } ?>
+            
+            <!-- <div class="carousel-item" data-bs-interval="5000">
                 <div class="texto-servicos">
                     <span>Lorem ipsum dolor sit amet consectetur.</span>
                     <legend>Serviço 2</legend>
@@ -35,7 +44,7 @@
                 <div class="image-servicos">
                     <img src="https://placehold.co/1200x600" class="d-block w-100 carrousel-image" alt="...">
                 </div>
-            </div>
+            </div> -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval2"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

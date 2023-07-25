@@ -227,7 +227,24 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
 
-    <script>
+<script>
+    // window.onload = function(){
+    //     $.ajax({
+    //         url: '../assets/ajax/busca_imagens_ativas.php',
+    //         method: 'post',
+    //         dataType: 'json'
+    //     })
+    //     .done(function(obj) {
+
+    //         var dados = obj.dados;
+    //         var nome = dados.imagens;
+    //         $('#card').text(nome);
+    //         $('#funcao').text(funcao);
+
+    //     })
+    // };
+
+
         function cadSolicita(){
             const name = $("#name").val();
             const email = $("#email").val();
@@ -294,7 +311,7 @@
                 }
             })
         }
-    </script>
+</script>
 </body>
 
 </html>
